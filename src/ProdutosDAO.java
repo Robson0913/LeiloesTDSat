@@ -34,9 +34,9 @@ public class ProdutosDAO {
         prep.setDouble(2, produto.getValor());
         prep.setString(3, produto.getStatus());
 
-        prep.execute();
+        prep.executeUpdate();
 
-        JOptionPane.showMessageDialog(null, "Produto cadastrado com sucesso!");
+        JOptionPane.showMessageDialog(null, "Cadastro realizado com sucesso!");
 
     } catch (Exception e) {
         JOptionPane.showMessageDialog(null, "Erro ao cadastrar produto: " + e.getMessage());
@@ -49,8 +49,10 @@ public class ProdutosDAO {
         
     }
     
-    public ArrayList<ProdutosDTO> listarProdutos(){
-        
+   public ArrayList<ProdutosDTO> listarProdutos() {
+
+    listagem.clear(); // 👈 IMPORTANTE
+
     String sql = "SELECT * FROM produtos";
 
     try {
@@ -74,9 +76,4 @@ public class ProdutosDAO {
 
     return listagem;
 }
-
-    
-    
-        
 }
-
