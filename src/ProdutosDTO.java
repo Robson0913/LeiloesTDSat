@@ -8,9 +8,10 @@
  * @author Adm
  */
 public class ProdutosDTO {
+
     private Integer id;
     private String nome;
-    private Integer valor;
+    private Double valor;   // ← AQUI
     private String status;
 
     public Integer getId() {
@@ -21,7 +22,7 @@ public class ProdutosDTO {
         return nome;
     }
 
-    public Integer getValor() {
+    public Double getValor() {   // ← AQUI
         return valor;
     }
 
@@ -37,12 +38,12 @@ public class ProdutosDTO {
         this.nome = nome;
     }
 
-    public void setValor(Integer valor) {
+    public void setValor(Double valor) {   // ← AQUI
         this.valor = valor;
     }
 
     public void setStatus(String status) {
         this.status = status;
     }
-    
 }
+
